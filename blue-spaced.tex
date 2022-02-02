@@ -1,0 +1,307 @@
+%-------------------------------------
+% LaTeX Resume for Software Engineers
+% Author : Leslie Cheng
+% License : MIT
+%-------------------------------------
+
+\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+
+\usepackage[empty]{fullpage}
+\usepackage{enumitem}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+%-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+% Header settings
+\def \fullname {Viggnah Selvaraj}
+\def \subtitle {}
+
+\def \linkedinicon {\faLinkedin}
+\def \linkedinlink {https://linkedin.com/in/dwight-schrute/}
+\def \linkedintext {/dwight-schrute}
+
+\def \phoneicon {\faPhoneSquare}
+\def \phonetext {+94-773671128}
+
+\def \addressicon {\faHome}
+\def \addresstext {No. 224/1, Pickerings Rd, Colombo 13}
+
+\def \nicicon {\faCreditCard}
+\def \nictext {972594580V}
+
+\def \emailicon {\faEnvelope}
+\def \emaillink {mailto:viggnahselvaraj@hotmail.com}
+\def \emailtext {viggnahselvaraj@hotmail.com}
+
+\def \githubicon {\faGithub}
+\def \githublink {https://github.com/viggnah}
+\def \githubtext {/viggnah}
+
+\def \websiteicon {\faGlobe}
+\def \websitelink {https://google.com/}
+\def \websitetext {dwightschrute.com}
+
+\def \headertype {\singlecol} % \singlecol or \doublecol
+
+% Misc settings
+\def \entryspacing {-0pt}
+
+\def \bulletstyle {\faAngleRight}
+
+% Define colours
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{0D47A1}
+\definecolor{accent}{HTML}{263238}
+\definecolor{links}{HTML}{1565C0}
+
+%------------------------------------------------------------------------------------------------------------------- 
+
+% Defines to make listing easier
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \address {\addressicon \hspace{3pt}{ \addresstext}}
+\def \nic {\nicicon \hspace{3pt}{ \nictext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
+% Define the link colours
+\hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+}
+
+% Set the margin alignment 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+
+% Sections
+\renewcommand{\section}[2]{\vspace{5pt}
+  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+}
+
+% Entry start and end, for spacing
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
+\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Itemized list for the bullet points under an entry, if necessary
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% Resume item
+\renewcommand{\labelitemii}{\bulletstyle}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Entry with title, subheading, date(s), and location
+\newcommand{\resumeEntryTSDL}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+      \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry with title and date(s)
+\newcommand{\resumeEntryTD}[2]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry for special (skills)
+\newcommand{\resumeEntryS}[2]{
+  \item[]\small{
+    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+  }
+}
+
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+        {\small#4} & {\small#1} \\
+        {\small#5} & {\small#2} \\
+        {\small#6} & {\small#3}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+% Single column header
+\newcommand{\singlecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[b]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l}
+        {\small#1} \\
+        {\small#2} \\
+        {\small#3} \\
+        {\small#4} \\
+        {\small#5} \\
+        {\small#6}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+\begin{document}
+%-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%---------------------------------------------------- HEADER ----------------------------------------------------
+
+\headertype{\nic}{\email}{\phone}{\address}{\github}{} % Set the order of items here
+% {\linkedin}{\website}
+\vspace{-35pt} % Set a negative value to push the body up, and the opposite
+
+%-------------------------------------------------- JOB OBJECTIVE --------------------------------------------------
+\section{\faCrosshairs}{Job Objective}
+
+  \resumeEntryStart
+    \resumeEntryS {}{Meaningful work with cheerful people. Write clean code.}
+  \resumeEntryEnd
+
+%-------------------------------------------------- EDUCATION --------------------------------------------------
+\section{\faGraduationCap}{Education}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {B.Tech in Computer Science and Engineering}{2015 -- 2019}
+      {National Institute of Technology, Calicut (NITC), India}{CGPA: 8.33/10.0}
+  \resumeEntryEnd 
+
+  \resumeEntryStart     
+    \resumeEntryTSDL
+      {Edexcel GCE Advanced Level}{2013 -- 2015}
+      {Stafford International School, Colombo, Sri Lanka}{Grades: 4A*}
+  \resumeEntryEnd
+
+  \resumeEntryStart     
+    \resumeEntryTSDL
+      {Edexcel GCE Ordinary Level}{2011 -- 2013}
+      {Stafford International School, Colombo, Sri Lanka}{Grades: 8A* \& 1A}
+  \resumeEntryEnd
+  
+%-------------------------------------------------- EXPERIENCE --------------------------------------------------
+\section{\faIndustry}{Experience}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Deutsche Bank}{Oct 2019 -- Dec 2021}
+      {Analyst/Developer}{Pune, India}
+    \resumeEntryTD
+    {Projects}{}
+    \resumeItemListStart
+      \resumeItem {Json schema to relational schema converter}
+      \resumeItem {Migrated Informatica based data flow to Spark}
+      \resumeItem {Onboarded two separate data flows for regulatory reporting purposes}
+    \resumeItemListEnd
+    
+    \resumeEntryTD
+    {Responsibilities}{}
+    \resumeItemListStart
+      \resumeItem {Development in Java and Spark to ensure data delivery for regulatory reporting purposes}
+      \resumeItem {Handled requirements with business analysts and managed stakeholders on a continuous basis}
+      \resumeItem {Mentored and guided new graduates on best practices to work on projects}
+      \resumeItem {Followed agile (scrum framework)}
+    \resumeItemListEnd
+
+    \resumeEntryTD
+    {Achievements}{}
+    \resumeItemListStart
+      \resumeItem {Optimised data processing in Spark to improve delivery time by 60\% to 80\% on two separate flows}
+      \resumeItem {Improved unit test coverage for all the code I worked on}
+      \resumeItem {Learnt business aspect to better understand the data we were processing}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+%-------------------------------------------------- PROJECTS --------------------------------------------------
+\section{\faFlask}{Projects}
+
+  \resumeEntryStart
+    \resumeEntryTD
+      {Natural and Emotional Linguistic Text to Speech Synthesis}{}
+    \resumeItemListStart
+      \resumeItem {Final year project. Won TCS Best Project Award for best final year project. Published as an IEEE white paper.}
+      \resumeItem {The two--part system synthesizes emotional and natural voice from unstructured text.}
+      \resumeItem {The first part extracts emotions out of text using text mining and LSTMs.}
+      \resumeItem {The model was flexible to obtain high accuracy over multiple datasets.}
+      \resumeItem {The second part identifies the key features of speech and modifies those attributes in neutral speech to give it an emotional and human--like sound.}
+      \resumeItem {To identify these exclusive features an SER (Speech Emotion Recognition) model was also built.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTD
+      {szyrics}{}
+    \resumeItemListStart
+      \resumeItem {A Rhythmbox (music player) plugin with a simple and beautiful GUI to display synchronized lyrics in full screen or in the sidebar.}
+      \resumeItem {Built using Python and GTK toolkit.}
+      \resumeItem {Learnt most of the aspects by reading and figuring out from the official documentation due to lack of resources.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+%-------------------------------------------------- TECHNICAL SKILLS --------------------------------------------------
+\section{\faStar}{Technical Skills}
+ \resumeEntryStart
+  \resumeEntryS{Programming Languages} {Python, C, C++, Java, SQL}
+  \resumeEntryS{Technologies/Practices} {Test-Driven Development, Apache Spark, Apache Camel, Hadoop, Hive, Yarn, Keras, Agile Scrum, SDLC, \LaTeX}
+ \resumeEntryEnd
+ 
+ %-------------------------------------------------- ACHIEVEMENTS --------------------------------------------------
+\section{\faTrophy}{Achievements}
+  \resumeEntryStart
+%    \resumeItemListStart
+      \resumeItem {Winner of the TCS Best Project Award for the best final year project at university.}
+      \resumeItem {Best results in school at the Advanced Level and Ordinary Level Examinations.}
+      \resumeItem {Won World Prize award for Physics at A/L and World Prize award for Mathematics at O/L.}
+      \resumeItem {Clinched 10\textsuperscript{th} place for Sri Lanka at the World Youth Scrabble Championships.}
+      \resumeItem {Part of the Prefects' Guild at school.}
+      \resumeItem {Member of the basketball team at university.}
+   %\resumeItemListEnd
+ \resumeEntryEnd
+
+ %-------------------------------------------------- INTERESTS --------------------------------------------------
+\section{\faHeart}{Interests}
+  \resumeEntryStart
+      \resumeEntryS {}{Reading, Working out, Baking, Basketball, Scrabble, Cricket, F1}
+   \resumeEntryEnd
+
+\end{document}
