@@ -17,7 +17,7 @@
   \usepackage[T1]{fontenc}
   \usepackage[pdftex]{hyperref}
 \fi
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage[sfdefault,light]{FiraSans}
 \usepackage{anyfontsize}
 \usepackage{xcolor}
@@ -29,14 +29,14 @@
 \def \subtitle {}
 
 \def \linkedinicon {\faLinkedin}
-\def \linkedinlink {https://linkedin.com/in/dwight-schrute/}
-\def \linkedintext {/dwight-schrute}
+\def \linkedinlink {https://linkedin.com/in/viggnah/}
+\def \linkedintext {/viggnah}
 
 \def \phoneicon {\faPhoneSquare}
-\def \phonetext {+94-773671128}
+\def \phonetext {+94-771094041}
 
 \def \addressicon {\faHome}
-\def \addresstext {No. 224/1, Pickerings Rd, Colombo 13}
+\def \addresstext {224/1, Pickerings Rd, Colombo 13}
 
 \def \nicicon {\faCreditCard}
 \def \nictext {972594580V}
@@ -49,9 +49,9 @@
 \def \githublink {https://github.com/viggnah}
 \def \githubtext {/viggnah}
 
-\def \websiteicon {\faGlobe}
-\def \websitelink {https://google.com/}
-\def \websitetext {dwightschrute.com}
+\def \websiteicon {\faMedium}
+\def \websitelink {https://medium.com/@viggnah}
+\def \websitetext {@viggnah}
 
 \def \headertype {\singlecol} % \singlecol or \doublecol
 
@@ -187,16 +187,16 @@
 
 %---------------------------------------------------- HEADER ----------------------------------------------------
 
-\headertype{\nic}{\email}{\phone}{\address}{\github}{} % Set the order of items here
-% {\linkedin}{\website}
+\headertype{\email}{\phone}{\website}{\github}{\linkedin}{} % Set the order of items here, empty braces reqd at end to have 6
+% {\nic}{\address}
 \vspace{-35pt} % Set a negative value to push the body up, and the opposite
 
 %-------------------------------------------------- JOB OBJECTIVE --------------------------------------------------
-\section{\faCrosshairs}{Job Objective}
+% \section{\faCrosshairs}{Job Objective}
 
-  \resumeEntryStart
-    \resumeEntryS {}{Meaningful work with cheerful people. Write clean code.}
-  \resumeEntryEnd
+%   \resumeEntryStart
+%     \resumeEntryS {}{Meaningful work with cheerful people. Write clean code.}
+%   \resumeEntryEnd
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
 \section{\faGraduationCap}{Education}
@@ -221,6 +221,27 @@
   
 %-------------------------------------------------- EXPERIENCE --------------------------------------------------
 \section{\faIndustry}{Experience}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {WSO2}{May 2022 -- Present}
+      {Senior Solutions Engineer}{Colombo, Sri Lanka}
+    \resumeEntryTD
+    {Responsibilities}{}
+    \resumeItemListStart
+      \resumeItem {Technical selling of API Management, Integration, and Identity \& Access Management (IAM)}
+      \resumeItem {Demos}
+      \resumeItem {Stakeholder management between product team, support team, sales team, customers and partners}
+    \resumeItemListEnd
+
+    \resumeEntryTD
+    {Achievements}{}
+    \resumeItemListStart
+      \resumeItem {Top \% sometimes}
+      \resumeItem {Handled }
+      \resumeItem {}
+    \resumeItemListEnd
+  \resumeEntryEnd
 
   \resumeEntryStart
     \resumeEntryTSDL
@@ -282,7 +303,7 @@
 \section{\faStar}{Technical Skills}
  \resumeEntryStart
   \resumeEntryS{Programming Languages} {Python, C, C++, Java, SQL}
-  \resumeEntryS{Technologies/Practices} {Test-Driven Development, Apache Spark, Apache Camel, Hadoop, Hive, Yarn, Keras, Agile Scrum, SDLC, \LaTeX}
+  \resumeEntryS{Technologies/Practices} {Test-Driven Development, Apache Spark, Apache Camel, Hadoop, Hive, Yarn, Agile Scrum, SDLC, \LaTeX}
  \resumeEntryEnd
  
  %-------------------------------------------------- ACHIEVEMENTS --------------------------------------------------
@@ -301,7 +322,7 @@
  %-------------------------------------------------- INTERESTS --------------------------------------------------
 \section{\faHeart}{Interests}
   \resumeEntryStart
-      \resumeEntryS {}{Reading, Working out, Baking, Basketball, Scrabble, Cricket, F1}
+      \resumeEntryS {}{Reading, Running, Cricket, F1}
    \resumeEntryEnd
 
 \end{document}
