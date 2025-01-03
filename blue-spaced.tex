@@ -53,6 +53,10 @@
 \def \websitelink {https://medium.com/@viggnah}
 \def \websitetext {@viggnah}
 
+\def \stackoverflowicon {\faStackOverflow}
+\def \stackoverflowlink {https://stackoverflow.com/users/19261326/viggnah}
+\def \stackoverflowtext {viggnah}
+
 \def \headertype {\singlecol} % \singlecol or \doublecol
 
 % Misc settings
@@ -76,6 +80,7 @@
 \def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
 \def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+\def \stackoverflow {\stackoverflowicon \hspace{3pt}\href{\stackoverflowlink}{\stackoverflowtext}}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.55in}
@@ -187,7 +192,7 @@
 
 %---------------------------------------------------- HEADER ----------------------------------------------------
 
-\headertype{\email}{\phone}{\website}{\github}{\linkedin}{} % Set the order of items here, empty braces reqd at end to have 6
+\headertype{\email}{\phone}{\website}{\stackoverflow}{\github}{\linkedin} % Set the order of items here, empty braces reqd at end to have 6
 % {\nic}{\address}
 \vspace{-35pt} % Set a negative value to push the body up, and the opposite
 
@@ -281,14 +286,11 @@
 
   \resumeEntryStart
     \resumeEntryTD
-      {Natural and Emotional Linguistic Text to Speech Synthesis}{}
+      {Envoy Examples}{}
     \resumeItemListStart
-      \resumeItem {Final year project that won TCS Best Project Award, published as an IEEE white paper}
-      \resumeItem {The two--part system synthesizes emotional and natural voice from unstructured text}
-      \resumeItem {The first part extracts emotions out of text using text mining and LSTMs}
-      % \resumeItem {The model was flexible to obtain high accuracy over multiple datasets}
-      \resumeItem {The second part identifies the key features of speech and modifies those attributes in neutral speech to give it an emotional and human--like sound}
-      \resumeItem {To identify these exclusive features an SER (Speech Emotion Recognition) model was also built}
+      \resumeItem {\href{https://medium.com/@viggnah/how-to-deploy-envoy-as-a-sidecar-proxy-on-kubernetes-c3a3ad3935ee}{Sidecar} and \href{https://medium.com/@viggnah/how-to-deploy-envoy-as-an-edge-proxy-on-kubernetes-f1af78e1ebfb}{Edge} proxy Kubernetes deployment pattern guides on Medium}
+      \resumeItem {Built using Envoy Proxy, Python Flask and Ballerina.}
+      \resumeItem {Articles have over 10,000+ views.}
     \resumeItemListEnd
   \resumeEntryEnd
 
@@ -302,17 +304,32 @@
     \resumeItemListEnd
   \resumeEntryEnd
 
+  % \resumeEntryStart
+  %   \resumeEntryTD
+  %     {Natural and Emotional Linguistic Text to Speech Synthesis}{}
+  %   \resumeItemListStart
+  %     \resumeItem {Final year project that won TCS Best Project Award, published as an IEEE white paper}
+  %     \resumeItem {The two--part system synthesizes emotional and natural voice from unstructured text}
+  %     \resumeItem {The first part extracts emotions out of text using text mining and LSTMs}
+  %     % \resumeItem {The model was flexible to obtain high accuracy over multiple datasets}
+  %     \resumeItem {The second part identifies the key features of speech and modifies those attributes in neutral speech to give it an emotional and human--like sound}
+  %     \resumeItem {To identify these exclusive features an SER (Speech Emotion Recognition) model was also built}
+  %   \resumeItemListEnd
+  % \resumeEntryEnd
+
 %-------------------------------------------------- TECHNICAL SKILLS --------------------------------------------------
 \section{\faStar}{Technical Skills}
  \resumeEntryStart
   \resumeEntryS{Programming Languages} {Python, Ballerina, C++, Java}
-  \resumeEntryS{Technologies/Practices} {Test-Driven Development, All WSO2 Products, Apache Spark, Apache Camel, Hadoop, Hive, Yarn, Agile Scrum, SDLC, \LaTeX}
+  \resumeEntryS{Technologies/Practices} {Test-Driven Development, All WSO2 Products, Elastic stack, Docker, Kubernetes, Apache Spark, Apache Camel, Hadoop, Hive, Yarn, Agile Scrum, SDLC, \LaTeX}
  \resumeEntryEnd
  
  %-------------------------------------------------- ACHIEVEMENTS --------------------------------------------------
 \section{\faTrophy}{Achievements}
   \resumeEntryStart
 %    \resumeItemListStart
+      \resumeItem {Medium articles with 10,000+ views in total.}
+      \resumeItem {100+ answers on StackOverflow.}
       \resumeItem {Winner of the TCS Best Project Award for the best final year project at university.}
       \resumeItem {Best results in school at the Advanced Level and Ordinary Level Examinations.}
       % \resumeItem {Won World Prize award for Physics at A/L and World Prize award for Mathematics at O/L.}
