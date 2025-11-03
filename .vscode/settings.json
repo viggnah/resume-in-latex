@@ -1,0 +1,36 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (Docker)",
+      "tools": [
+        "latexmk_docker"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk_docker",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-v",
+        "%DIR%:/work",
+        "-w",
+        "/work",
+        "texlive/texlive:latest",
+        "latexmk",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=/work",
+        "%DOCFILE%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.view.pdf.viewer": "tab"
+}
